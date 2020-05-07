@@ -1,0 +1,22 @@
+<div style="text-align:center">
+    <!-- Previous page link -->
+    <?php if (isset($this->previous)): ?>
+          <a href="category-ads?id=<?php echo $this->cId . "&p=" . $this->previous ?>">Prethodna</a>&nbsp;|&nbsp;
+    <?php else: ?>
+        <span style="color:silver">Prethodna</span>&nbsp;|&nbsp;
+    <?php endif; ?>
+    <!-- Numbered page links -->
+    <?php foreach ($this->pagesInRange as $page): ?>
+        <?php if ($page != $this->current): ?>
+            <a href="category-ads?id=<?php echo $this->cId . "&p=" . $page ?>">&nbsp;<?php echo $page; ?>&nbsp;</a>
+        <?php else: ?>
+            <span style="text-decoration:underline">&nbsp;<?php echo $page; ?>&nbsp;</span>
+        <?php endif; ?>
+    <?php endforeach; ?>
+    <!-- Next page link -->
+    <?php if (isset($this->next)): ?>
+        &nbsp;|&nbsp;<a href="category-ads?id=<?php echo $this->cId . "&p=" . $this->next ?>">Slijedeća</a>
+    <?php else: ?>
+        &nbsp;|&nbsp;<span style="color:silver">Slijedeća</span>
+    <?php endif; ?>
+ </div>

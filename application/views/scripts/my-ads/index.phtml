@@ -1,0 +1,28 @@
+<div>
+<p>
+<span class="title">Moji oglasi</span>
+</p>
+
+<div class="content2">
+    <span class="textContainer">
+        <p>
+        Ovdje su Vaši oglasi:
+        </p>
+	</span>
+	<?php $ordinal = 1; foreach ($this->entries as $entry): ?>
+        <span class="textContainer2">
+            <p class="line">
+                <span class="spanAdTitle"><?php echo $ordinal . ". " . $this->escape($entry->getTitle()) . " (" . $this->escape($entry->getCategoryName()) . ")" ?></span><br />
+                <span class="spanAdDate"><?php echo $this->escape($entry->getStartDateCro()) ?></span><br />
+                <span class="spanAdText"><?php echo strip_tags(nl2br($entry->getText()), '<br /><br/><br>') ?></span><br /><br />
+            </p>
+			<p class="line">
+                Oglas je: <span style="font-weight:bold" ><?php echo $entry->getStatus() == 1 ? "aktivan" : "istekao" ?></span><br /><br />      
+            </p>
+          	<a href="edit-ad?edit=<?php echo $this->escape($entry->getId()) ?>">Uredi oglas</a>&nbsp;|&nbsp;<a href="my-ads?del=<?php echo $this->escape($entry->getId()) ?>">Izbriši oglas</a>     	
+        </span>
+        <br />
+    <?php $ordinal++; endforeach ?>
+</div>
+
+</div>

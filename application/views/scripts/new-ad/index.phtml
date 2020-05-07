@@ -1,0 +1,88 @@
+<div>
+<p>
+<span class="title">Predaja oglasa</span>
+</p>
+<div class="content2">
+<form method="post" action="new-ad">
+    <span class="textContainer">
+        <div class="msg" style="display:<?php echo $this->missingEntry ? "block" : "none" ?>">&nbsp;Niste ispunili sva obavezna polja!&nbsp;</div>    
+    	<div class="msg" style="display:<?php echo $this->adInserted ? "block" : "none" ?>">&nbsp;Oglas je uspješno predan!&nbsp;</div>   
+    </span><br />
+    <span class="textContainer">
+    	<p>
+        Ovdje možete predati Vaš novi oglas. Polja označena crvenom zvjezdicom predstavljaju obavezne unose.
+        </p>
+	</span>
+
+        <ul style="padding-left:15px; padding-right:15px; margin-left:-5px">
+            <li class="newAd" style="border-top:1px #103c9c dotted">
+                <p style="margin-bottom:3px">
+                <span><font style="color:red">* </font>Naslov oglasa:</span>
+                </p>
+                <input style="width:800px" maxlength="50" type="text" name="title" value="<?php echo $_SESSION["newAd"]->getTitle() ?>" />
+            </li>
+            <li class="newAd">
+                <p style="margin-bottom:3px">
+                <span><font style="color:red">* </font>Sadržaj oglasa:</span>
+                </p>
+                <textarea id="taContent" name="taContent" style="width:800px; height:150px"><?php echo $_SESSION["newAd"]->getText() ?></textarea>
+            </li>
+            <li class="newAd">
+                <p style="margin-bottom:3px">
+                <span>Trajanje oglasa (u danima):</span>
+                </p>
+                <select name="duration">
+                    <option value="7">7</option>
+                    <option value="30">30</option>
+                    <option value="60">60</option>
+                    <option value="90">90</option>
+                    <option value="120">120</option>
+                </select>
+            </li>
+            <li class="newAd">
+                <p style="margin-bottom:3px">
+                <span>Županije u kojima vrijedi oglas:</span>
+                </p>
+                <span style="border:1px #005BB7 solid; padding-top:3px; padding-right:5px">
+                    <input type="checkbox" checked="checked" id="chAll" name="chAll" onchange="if(this.checked){uncheckCounties()}" value="chAll" />Cijela Hrvatska
+                </span><br />                                       
+                <input type="checkbox" id="ch1" name="ch1" value="1" onchange="if(this.checked){uncheckAllCountriesOption()}" />Grad Zagreb<br />
+                <input type="checkbox" id="ch2" name="ch2" value="2" onchange="if(this.checked){uncheckAllCountriesOption()}" />Zagrebačka županija<br />
+                <input type="checkbox" id="ch3" name="ch3" value="3" onchange="if(this.checked){uncheckAllCountriesOption()}" />Krapinsko-zagorska županija<br />
+                <input type="checkbox" id="ch4" name="ch4" value="4" onchange="if(this.checked){uncheckAllCountriesOption()}" />Sisačko-moslavačka županija<br />
+                <input type="checkbox" id="ch5" name="ch5" value="5" onchange="if(this.checked){uncheckAllCountriesOption()}" />Karlovačka županija<br />
+                <input type="checkbox" id="ch6" name="ch6" value="6" onchange="if(this.checked){uncheckAllCountriesOption()}" />Varaždinska županija<br />
+                <input type="checkbox" id="ch7" name="ch7" value="7" onchange="if(this.checked){uncheckAllCountriesOption()}" />Koprivničko-križevačka županija<br />
+                <input type="checkbox" id="ch8" name="ch8" value="8" onchange="if(this.checked){uncheckAllCountriesOption()}" />Bjelovarsko-bilogorska županija<br />
+                <input type="checkbox" id="ch9" name="ch9" value="9" onchange="if(this.checked){uncheckAllCountriesOption()}" />Primorsko-goranska županija<br />
+                <input type="checkbox" id="ch10" name="ch10" value="10" onchange="if(this.checked){uncheckAllCountriesOption()}" />Ličko-senjska županija<br />
+                <input type="checkbox" id="ch11" name="ch11" value="11" onchange="if(this.checked){uncheckAllCountriesOption()}" />Virovitičko-podravska županija<br />
+                <input type="checkbox" id="ch12" name="ch12" value="12" onchange="if(this.checked){uncheckAllCountriesOption()}" />Požeško-slavonska županija<br />
+                <input type="checkbox" id="ch13" name="ch13" value="13" onchange="if(this.checked){uncheckAllCountriesOption()}" />Brodsko-posavska županija<br />
+                <input type="checkbox" id="ch14" name="ch14" value="14" onchange="if(this.checked){uncheckAllCountriesOption()}" />Zadarska županija<br />
+                <input type="checkbox" id="ch15" name="ch15" value="15" onchange="if(this.checked){uncheckAllCountriesOption()}" />Osječko-baranjska županija<br />
+                <input type="checkbox" id="ch16" name="ch16" value="16" onchange="if(this.checked){uncheckAllCountriesOption()}" />Šibensko-kninska županija<br />
+                <input type="checkbox" id="ch17" name="ch17" value="17" onchange="if(this.checked){uncheckAllCountriesOption()}" />Vukovarsko-srijemska županija<br />
+                <input type="checkbox" id="ch18" name="ch18" value="18" onchange="if(this.checked){uncheckAllCountriesOption()}" />Splitsko-dalmatinska županija<br />
+                <input type="checkbox" id="ch19" name="ch19" value="19" onchange="if(this.checked){uncheckAllCountriesOption()}" />Istarska županija<br />
+                <input type="checkbox" id="ch20" name="ch20" value="20" onchange="if(this.checked){uncheckAllCountriesOption()}" />Dubrovačko-neretvanska županija<br />
+                <input type="checkbox" id="ch21" name="ch21" value="21" onchange="if(this.checked){uncheckAllCountriesOption()}" />Međimurska županija<br />
+            </li>
+            <li class="newAd">
+                <p>
+                <span>Izaberite kategoriju oglasa:</span>
+                <select name="adCategory">
+                <?php foreach($this->category as $c): ?>
+                    <option value="<?php echo $this->escape($c->getId()) ?>"><?php echo $this->escape($c->getName()) ?></option>
+                <?php endforeach ?>  
+                </select>
+                </p>
+            </li>
+        </ul>
+
+<p style="margin-left:15px">
+    <input type="submit" value="Predaj oglas" />
+</p>
+</form>    
+</div>
+</div>

@@ -1,0 +1,21 @@
+<div>
+<p>
+<span class="title">Rezultati pretrage</span>
+</p>
+<div class="content2">
+    <?php $ordinal = 1; foreach ($this->entries as $entry): ?>
+        <span class="textContainer2">
+        <p>
+            <span class="spanAdTitle"><?php echo $ordinal . ". " . $this->escape($entry->getTitle()) . " (" . $this->escape($entry->getCategoryName()) . ")" ?></span>
+        </p>
+        <p>
+            <span class="spanAdDate"><?php echo $this->escape($entry->getStartDateCro()) ?></span>
+        </p>
+        <p class="line">
+            <span class="spanAdText"><?php echo $this->escape($entry->getText()) ?></span><br /><br />
+        </p>
+        <a href="ad?id=<?php echo $this->escape($entry->getId()) ?>">Prikaži oglas sa svim detaljima</a>
+        </span><br />
+    <?php $ordinal++; endforeach ?>
+</div>
+</div>

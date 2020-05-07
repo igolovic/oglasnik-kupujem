@@ -1,0 +1,55 @@
+<div class="content2">
+<img alt="" src="res/pixel.gif" style="width:35px; height:100px; float:left" />
+<ul class="categories">
+<?php foreach ($this->menuEntriesCol1 as $entry): ?>
+	<li class="categories"><a class="heavy" href="category-ads?id=<?php echo $this->escape($entry->getId()) ?>"><?php echo $this->escape($entry->getName()) . " (" . $this->escape($entry->getAdCount()) . ")" ?></a></li>
+<?php endforeach; ?>
+</ul>
+<ul class="categories">
+<?php foreach ($this->menuEntriesCol2 as $entry): ?>
+	<li class="categories"><a class="heavy" href="category-ads?id=<?php echo $this->escape($entry->getId()) ?>"><?php echo $this->escape($entry->getName()) . " (" . $this->escape($entry->getAdCount()) . ")" ?></a></li>
+<?php endforeach; ?>
+</ul>
+<ul class="categories">
+<?php foreach ($this->menuEntriesCol3 as $entry): ?>
+	<li class="categories"><a class="heavy" href="category-ads?id=<?php echo $this->escape($entry->getId()) ?>"><?php echo $this->escape($entry->getName()) . " (" . $this->escape($entry->getAdCount()) . ")" ?></a></li>
+<?php endforeach; ?>
+</ul>
+</div>
+
+<p>
+<span class="title">Dobrodošli na Kupujem.net - Vaš besplatni oglasnik za potražnju svih vrsta roba i usluga!</span>
+</p>
+
+<div class="content2">
+    <span class="textContainer">
+        U ovom oglasniku možete objavljivati oglase za kupnju, uzimanje u najam ili primanje poklonjenih novih ili rabljenih proizvoda i usluga.<br /><br />
+        <font style="font-style:italic; font-weight:bold">Kupujem.net</font> je Vaš pouzdani partner za svaku vrstu <font style="font-style:italic; font-weight:bold">potražnje</font> bilo koje vrste roba ili usluga.<br /><br />
+        Svi sadržaji koje Vam nudi oglasnik Kupujem.net stoje Vam na raspolaganju potpuno <font style="font-style:italic; font-weight:bold">besplatno</font>.<br /><br />
+        Ako Vaš oglas počinje riječima kupujem, unajmljujem, tražim, trebam i sl. nalazite se na pravom mjestu!<br /><br />
+        <span style="display:<?php echo $this->showReg ? "block" : "none" ?>">
+        	<a href="reg" style="text-decoration:underline; font-weight:bold">Registrirajte se</a>, objavite oglas i nađite ono što Vam treba još danas.
+        </span>
+    </span>
+</div>
+
+<p>
+<span class="title">10 najnovijih oglasa</span>
+</p>
+
+<div class="content2">
+    <?php $ordinal = 1; foreach ($this->lastTenAdsEntries as $entry): ?>
+        <div class="textContainer2">
+        <p>
+            <span class="spanAdTitle"><?php echo $ordinal . ". " . $this->escape($entry->getTitle()) . " (" . $this->escape($entry->getCategoryName()) . ")" ?></span>
+        </p>
+        <p>
+            <span class="spanAdDate"><?php echo $this->escape($entry->getStartDateCro()) ?></span>
+        </p>
+        <p class="line">
+            <span class="spanAdText"><?php echo $this->escape($entry->getText()) ?></span><br /><br />
+        </p>
+        <a href="ad?id=<?php echo $this->escape($entry->getId()) ?>">Prikaži oglas sa svim detaljima</a>
+        </div><br />
+    <?php $ordinal++; endforeach ?>
+</div>

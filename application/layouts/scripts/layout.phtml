@@ -1,0 +1,128 @@
+﻿<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head>  
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Va&#154; besplatni oglasnik za kupnju i potra&#382;nju svih vrsta roba i usluga" />
+		<meta name="keywords" content="oglasnik,besplatni,oglasnici,kupujem,unajmljujem,prodajem,poklanjam"/>
+		<title>Kupujem.net - besplatni oglasnik</title>
+		<?php echo $this->headLink()->appendStylesheet('style.css') ?>
+		<script type="text/javascript" src="js/common.js"></script>
+		<link rel="shortcut icon" href="res/a.ico" />
+		<meta name="author" content="www.ivan-golovic.from.hr" />		
+	</head> 
+	<body>
+		<script type="text/javascript">
+		window.onload=function(){
+		var h=document.getElementById('middleMiddle').clientHeight+'px';
+		document.getElementById('middleLeft').style.height=h;
+		document.getElementById('middleRight').style.height=h;}
+		</script>
+		<div id="header">
+			<div id="top">
+				<div id="topLeft"></div>
+				<div id="topMiddle">
+					<div id="menu">
+						<a href="index">Naslovnica</a>&nbsp;|&nbsp;
+						<span style="display:<?php echo isset($_SESSION["user"]) ? "none" : "inline" ?>">
+							<a href="login">Login</a>
+							&nbsp;|&nbsp;
+							<a href="reg">Registracija</a> 
+						</span>
+						<span style="visibility:<?php echo isset($_SESSION["user"]) ? "visible" : "hidden" ?>; display:inline">
+							<a href="new-ad">Predaja oglasa</a>&nbsp;|&nbsp;
+							<a href="my-ads">Moji oglasi</a>&nbsp;|&nbsp;
+							<a href="edit-user-data">Moji podaci</a>                
+						</span>
+						<span style="visibility:<?php echo isset($_SESSION["user"]) ? "visible" : "hidden" ?>; float:right">                               
+							<label><?php echo isset($_SESSION["user"]) ? $_SESSION["user"]->getUserName() : "" ?>&nbsp;|&nbsp;</label>
+							<a href="login?act=logout">Logout</a>
+						</span>
+					</div>
+				</div>
+				<div id="topRight"></div>
+				<div id="logo"></div>
+			</div>
+		</div>
+		<div id="content">
+			<div id="middle">
+				<div id="middleLeft" style="height:0px"></div>
+				<div id="middleMiddle">
+					<div id="searchContainer">
+						<form method="post" action="search">
+							<input value="<?php echo isset($_SESSION["search"]) ? $_SESSION["search"] : "" ?>" name="s" class="s" type="text" maxlength="40" style="width:400px;" />&nbsp;<input type="submit" value="Tra&#382;i" />
+						</form>
+					</div>
+					<p style="text-align:center; height:65px;">
+					<a href="http://www.foto-oglasi.info/index" target="_blank"><img src="http://www.foto-oglasi.info/bann/Foto-oglasi2.gif" border="0" alt="Foto-Oglasi" width="160" height="60" /></a>
+					</p>
+					<p style="text-align:center">
+						<script type="text/javascript"><!--
+						google_ad_client = "pub-0027791663954308";
+						/* prvi */
+						google_ad_slot = "0679693364";
+						google_ad_width = 728;
+						google_ad_height = 90;
+						//-->
+						</script>
+						<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+						</script>
+					</p>
+					<?php echo $this->layout()->content ?>
+					<br />
+					<p style="text-align:left; font-weight:bold;">
+					Prijateljske web stranice:
+					</p>
+					<p style="text-align:left;">
+						<a target="_blank" style="text-decoration:underline;" href="http://www.nekretnine24.com">Nekretnine 24 sata</a> - Marketing portal i besplatni foto oglasnik za nekretnine
+					</p>
+					<p style="text-align:left;">
+						<a target="_blank" style="text-decoration:underline;" href="http://uputstva.org">Upute</a> - Uputstva za programe,razne poslove, slike za desktop, download besplatnih programa      
+					</p>           
+					<p style="text-align:left;">
+						<a target="_blank" style="text-decoration:underline;" href="http://www.2mbfeniks-nekretnine.hr">2MB Feniks</a> - Nekretnine
+					</p>
+						<a target="_blank" style="text-decoration:underline;" href="http://www.dobarlink.com/">Dobar Link</a>
+					</p>
+					<p style="text-align:left;">
+						<a target="_blank" style="text-decoration:underline;" href=" http://besplatnoje.blogspot.com/">Besplatno</a> 
+					</p>
+					</p>
+					<p style="text-align:left;">
+						<a target="_blank" style="text-decoration:underline;" href=" http://plazibatapartments.blogspot.com/">Apartmani</a> 
+					</p>
+					<div class="ln">
+						<a id="setHomePage" href="" onclick="makeHomepage()">Postavi kao polaznu stranicu</a>&nbsp;|&nbsp;
+						<a href="" onclick="addFavorite()">Dodaj u favorite</a>&nbsp;|&nbsp;
+						<a href="" onclick="window.print(); return false;">Ispis stranice na pisa&#269;</a>
+					</div>
+					<div class="ln">
+						<span style="font-size:11px">
+							Va&#154;a pitanja i prijedloge mo&#382;ete poslati na adresu <a style="text-decoration:underline" href="mailto:info@kupujem.net">info@kupujem.net</a> dok
+							sve tehni&#269;ke probleme mo&#382;ete prijaviti na <a style="text-decoration:underline" href="mailto:admin@kupujem.net">admin@kupujem.net</a>
+						</span>
+					</div>
+				</div>
+				<div id="middleRight" style="height:0px"></div>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="bottom">
+				<div id="bottomLeft"></div>
+				<div id="bottomMiddle">
+					<strong>&copy; Oglasnik Kupujem.net 2009.</strong><br />
+				</div>
+				<div id="bottomRight"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		var pageTracker = _gat._getTracker("UA-12590040-1");
+		pageTracker._trackPageview();
+		} catch(err) {}</script>
+	</body>
+</html>

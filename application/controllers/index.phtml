@@ -1,0 +1,62 @@
+<br />
+<div class="title">Detalji oglasa</div>
+<br />
+
+<div class="content2">
+
+<div class="textContainer2">
+<label class="l">Šifra oglasa:</label>
+<p><?php echo $this->escape($this->ad->getId()) ?></p>
+
+</div>
+
+<div class="textContainer2">
+<label class="l">Naslov oglasa:</label>
+<p><?php echo $this->ad->getTitle() ?></p>
+</div>
+
+<div class="textContainer2">
+<label class="l">Tekst oglasa:</label>
+<p><?php echo $this->ad->getText() ?></p>
+</div>
+
+<div class="textContainer2">
+<label class="l">Oglas postavio:</label>
+<p><?php echo strlen($this->user->getUserName()) < 1 ? "*****" : $this->escape($this->user->getUserName()) ?></p>
+<label class="l">Broj prvog kontakt telefona:</label>
+<p><?php echo strlen($this->user->getTelephone1()) < 1 ? "*****" : $this->escape($this->user->getTelephone1()) ?></p>
+<label class="l">Broj drugog kontakt telefona:</label>
+<p><?php echo strlen($this->user->getTelephone2()) < 1 ? "*****" : $this->escape($this->user->getTelephone2()) ?></p>
+<label class="l" style="width:400px">Država - županija - grad - ulica - kućni broj:</label>
+<p><?php echo "Hrvatska - " .  (strlen($this->user->getCountyName()) < 1 ? "*****" : $this->escape($this->user->getCountyName())) . " - " . 
+							(strlen($this->user->getCity()) < 1 ? "*****" : $this->escape($this->user->getCity())) . " - " . 
+							(strlen($this->user->getStreetName()) < 1 ? "*****" : $this->escape($this->user->getStreetName())) . " - " . 
+							(strlen($this->user->getStreetNumber()) < 1 ? "*****" : $this->escape($this->user->getStreetNumber())) 
+   ?>
+</p>
+</div>
+
+<div class="textContainer2">
+<label class="l">Kategorija oglasa:</label><p><?php echo $this->escape($this->ad->getCategoryName()) ?></p>
+</div>
+
+<div class="textContainer2">
+<label class="l">Datum postavljanja oglasa:</label><p><?php echo $this->escape($this->ad->getStartDateCro()) ?></p>
+</div>
+
+<div class="textContainer2">
+<label class="l">Oglas traje do:</label><p><?php echo $this->escape($this->ad->getEndDateCro()) ?></p>
+</div>
+
+<div class="textContainer2">
+<label class="l">Oglas vijedi u:</label>
+<?php foreach($this->ad->getCountyArray() as $county): ?>
+<p><?php echo $county ?></p>
+<?php endforeach ?>
+</div>
+
+<div class="textContainer2">
+<label class="l">Status oglasa:</label><p><?php echo $this->ad->getStatus() == 1 ? "Aktivan" : "Istekao" ?></p>
+</div>
+
+</div>

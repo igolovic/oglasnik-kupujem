@@ -1,0 +1,20 @@
+<div>
+    <p>
+        <span class="title">Zaboravljena lozinka</span>
+    </p>
+    <div class="content2">
+        <div class="textContainer">
+            <span>Unesite e-mail adresu koju ste koristili prilikom registracije i lozinka će Vam biti poslana na e-mail.</span><br/><br/>
+            <?php $this->form->setAction($this->url()); echo $this->form; ?>
+            <div class="msg" style="display:<?php echo $this->messageSent; ?>">
+        	Lozinka Vam je poslana na e-mail adresu.
+            </div>
+            <div class="msg" style="display:<?php echo $this->messageNotSent; ?>">
+        	E-mail adresa koju ste upisali nije korištena prilikom registracije.
+            </div>
+            <div class="msg" style="display:<?php echo $this->genericError; ?>">
+        	Greška prilikom slanja, molimo prijavite ovaj problem na <a href="mailto:admin@kupujem.net" style="text-decoration: underline;">admin@kupujem.net</a>.
+            </div>
+        </div>
+    </div>
+</div>

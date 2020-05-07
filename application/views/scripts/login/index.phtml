@@ -1,0 +1,20 @@
+<div>
+<p>
+<span class="title">Korisnička prijava</span>
+</p>
+<div class="content2">
+    <div class="textContainer">
+        <span>Da bi predali oglas ili ušli na Vaš privatni dio sajta morate biti logirani. Molimo unesite Vaše korisničke podatke.</span><br/><br/>
+        <?php $this->form->setAction($this->url()); echo $this->form; ?>
+	<div class="msg" style="display:<?php echo $this->badLogin; ?>;">
+        	Vaše korisničko ime ili lozinka nisu prihvaćeni, također provjerite da li ste aktivirali svoj korisnički račun (prilikom registracije poslana Vam je aktivacijska e-mail poruka).
+        </div>
+        <p>
+        Ako ste zaboravili lozinku kliknite <a href="password-recovery"><font style="text-decoration:underline; font-weight:bold">ovdje</font></a>.
+        </p>
+        <p>
+        Niste registrirani? Registrirajte se besplatno i brzo <a href="reg"><font style="text-decoration:underline; font-weight:bold">ovdje</font></a>.
+        </p>
+	</div>
+</div>
+</div>

@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<projectProfile>
+  <projectDirectory>
+    <projectProfileFile filesystemName=".zfproject.xml"/>
+    <applicationDirectory classNamePrefix="Application_">
+      <apisDirectory enabled="false"/>
+      <configsDirectory>
+        <applicationConfigFile type="ini"/>
+      </configsDirectory>
+      <controllersDirectory>
+        <controllerFile controllerName="index">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="error"/>
+        <controllerFile controllerName="ad">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="newAd">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="reg">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="login">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="myAds">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="search">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="editAd">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="confirm">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="editUserData">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="categoryAds">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="PasswordRecovery">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+      </controllersDirectory>
+      <layoutsDirectory enabled="false"/>
+      <modelsDirectory/>
+      <modulesDirectory enabled="false"/>
+      <viewsDirectory>
+        <viewScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="index">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="error">
+            <viewScriptFile forActionName="error"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="ad">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="newAd">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="reg">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="login">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="myAds">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="search">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="editAd">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="confirm">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="editUserData">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="categoryAds">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="PasswordRecovery">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+        </viewScriptsDirectory>
+        <viewHelpersDirectory/>
+        <viewFiltersDirectory enabled="false"/>
+      </viewsDirectory>
+      <bootstrapFile filesystemName="Bootstrap.php"/>
+      <formsDirectory>
+        <formFile formName="PasswordRecovery"/>
+      </formsDirectory>
+    </applicationDirectory>
+    <dataDirectory enabled="false">
+      <cacheDirectory enabled="false"/>
+      <searchIndexesDirectory enabled="false"/>
+      <localesDirectory enabled="false"/>
+      <logsDirectory enabled="false"/>
+      <sessionsDirectory enabled="false"/>
+      <uploadsDirectory enabled="false"/>
+    </dataDirectory>
+    <libraryDirectory>
+      <zfStandardLibraryDirectory enabled="false"/>
+    </libraryDirectory>
+    <publicDirectory>
+      <publicStylesheetsDirectory enabled="false"/>
+      <publicScriptsDirectory enabled="false"/>
+      <publicImagesDirectory enabled="false"/>
+      <publicIndexFile filesystemName="index.php"/>
+      <htaccessFile filesystemName=".htaccess"/>
+    </publicDirectory>
+    <projectProvidersDirectory enabled="false"/>
+    <temporaryDirectory enabled="false"/>
+    <testsDirectory>
+      <testPHPUnitConfigFile filesystemName="phpunit.xml"/>
+      <testApplicationDirectory>
+        <testApplicationBootstrapFile filesystemName="bootstrap.php"/>
+        <testApplicationControllerDirectory>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="ControllerTest.php"/>
+          <testApplicationControllerFile filesystemName="PasswordRecoveryControllerTest.php"/>
+        </testApplicationControllerDirectory>
+      </testApplicationDirectory>
+      <testLibraryDirectory>
+        <testLibraryBootstrapFile filesystemName="bootstrap.php"/>
+      </testLibraryDirectory>
+    </testsDirectory>
+  </projectDirectory>
+</projectProfile>

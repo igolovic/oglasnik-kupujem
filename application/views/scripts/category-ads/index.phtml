@@ -1,0 +1,36 @@
+<div>
+
+<p>
+    <span class="title">
+    	Popis oglasa za kategoriju <?php echo $this->name . " (" . $this->adCount . ")" ?>
+    </span>
+</p>
+
+<div class="content2" style="margin-bottom:8px">
+	<span class="textContainer">
+		<?php echo $this->description ?>
+    </span>
+</div>
+
+<div class="content2">
+<?php $ordinal = 1; foreach($this->paginator as $entry): ?>
+        <div class="textContainer2">
+        <p>
+            <span class="spanAdTitle"><?php echo $ordinal . ". " . $this->escape($entry->getTitle()) . " (" . $this->escape($entry->getCategoryName()) . ")" ?></span>
+        </p>
+        <p>
+            <span class="spanAdDate"><?php echo $this->escape($entry->getStartDateCro()) ?></span>
+        </p>
+        <p class="line">
+            <span class="spanAdText"><?php echo $this->escape($entry->getText()) ?></span><br /><br />
+        </p>
+        <a href="ad?id=<?php echo $this->escape($entry->getId()) ?>">Prikaži oglas sa svim detaljima</a>
+        </div>
+	<br />
+<?php $ordinal++; endforeach; ?>
+</div>
+
+</div>
+<br />
+<?php echo $this->paginationControl($this->paginator, 'Sliding', 'pagination.phtml', array("cId" => $_GET["id"])); ?>
+<br />

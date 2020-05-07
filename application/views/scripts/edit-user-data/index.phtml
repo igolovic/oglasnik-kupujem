@@ -1,0 +1,147 @@
+<div>
+<p>
+<span class="title">Uređivanje korisničkih podataka</span>
+</p>
+<div class="content2">
+<form method="post" action="edit-user-data">
+    <span class="textContainer">
+		<div class="msg" style="display:<?php echo $this->passwordMismatch ? "block" : "none" ?>">&nbsp;Lozinka i ponovljena lozinka se ne poklapaju&nbsp;</div>
+		<div class="msg" style="display:<?php echo $this->missingEntry ? "block" : "none" ?>">&nbsp;Niste unijeli sve obavezne unose&nbsp;</div>        
+		<div class="msg" style="display:<?php echo $this->userUpdated ? "block" : "none" ?>">&nbsp;Vaši korisnički podaci su uspješno promijenjeni.&nbsp;</div>
+    </span><br />
+    <span class="textContainer">
+    	<p>
+		Ovdje možete uređivati Vaše korisničke podatke. Polja označena crvenom zvjezdicom predstavljaju obavezne unose.
+        </p>
+    </span>
+    <input type="hidden" name="id" value="<?php echo $this->escape($_SESSION["userData"]->getId()) ?>" />
+    
+        <fieldset>
+            <legend>Login podaci</legend>
+            <ul style="padding-left:15px; padding-right:15px">
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span>Korisničko ime (ime pod kojim ćete predavati oglase):</span>
+                    </p>
+                    <input name="username" style="width:400px; background-color:transparent" readonly="readonly" maxlength="20" type="text" value="<?php echo $this->escape($_SESSION["userData"]->getUserName()) ?>" />
+                </li>
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span><font style="color:red">* </font><span>Lozinka:</span>
+                    </p>
+					<input style="width:400px" maxlength="20" type="text" name="password1" value="<?php echo $this->escape($_SESSION["userData"]->getPassword()) ?>" />
+                </li>
+                <li class="newAd" style="border-bottom:0px">
+                    <p style="margin-bottom:3px">
+                    <span><font style="color:red">* </font><span>Ponovljena lozinka:</span>
+                    </p>
+                    <input style="width:400px" maxlength="20" type="text" name="password2" value="<?php echo $this->escape($_SESSION["userData"]->getPassword()) ?>" />            
+                </li>
+            </ul>
+        </fieldset>
+    
+    	<fieldset>
+    		<legend>Osobni podaci</legend>    
+            <ul style="padding-left:15px; padding-right:15px">
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span>Ime:</span>
+                    </p>
+                    <input style="width:400px" maxlength="20" type="text" name="name" value="<?php echo $this->escape($_SESSION["userData"]->getName()) ?>" />
+                </li>
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span>Prezime:</span>
+                    </p>
+                    <input style="width:400px" maxlength="20" type="text" name="lastName"  value="<?php echo $this->escape($_SESSION["userData"]->getLastName()) ?>"/>
+                </li>
+            </ul>
+       </fieldset>
+                
+    	<fieldset>
+    		<legend>Kontakt podaci</legend>
+            <ul style="padding-left:15px; padding-right:15px">      
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span>Država:</span>
+                    </p>
+                    <input style="width:400px; background-color:transparent" readonly="readonly" maxlength="20" type="text" value="Hrvatska" />
+                </li>
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span>Županija:</span>
+                    </p>
+                    <select name="selCounty">
+                        <option value="1" <?php if($_SESSION["userData"]->getCountyId() == 1){ echo "selected='selected'"; } ?>>Grad Zagreb</option>
+                        <option value="2" <?php if($_SESSION["userData"]->getCountyId() == 2){ echo "selected='selected'"; } ?>>Zagrebačka županija</option>
+                        <option value="3" <?php if($_SESSION["userData"]->getCountyId() == 3){ echo "selected='selected'"; } ?>>Krapinsko-zagorska županija</option>
+                        <option value="4" <?php if($_SESSION["userData"]->getCountyId() == 4){ echo "selected='selected'"; } ?>>Sisačko-moslavačka županija</option>
+                        <option value="5" <?php if($_SESSION["userData"]->getCountyId() == 5){ echo "selected='selected'"; } ?>>Karlovačka županija</option>
+                        <option value="6" <?php if($_SESSION["userData"]->getCountyId() == 6){ echo "selected='selected'"; } ?>>Varaždinska županija</option>
+                        <option value="7" <?php if($_SESSION["userData"]->getCountyId() == 7){ echo "selected='selected'"; } ?>>Koprivničko-križevačka županija</option>
+                        <option value="8" <?php if($_SESSION["userData"]->getCountyId() == 8){ echo "selected='selected'"; } ?>>Bjelovarsko-bilogorska županija</option>
+                        <option value="9" <?php if($_SESSION["userData"]->getCountyId() == 9){ echo "selected='selected'"; } ?>>Primorsko-goranska županija</option>
+                        <option value="10" <?php if($_SESSION["userData"]->getCountyId() == 10){ echo "selected='selected'"; } ?>>Ličko-senjska županija</option>
+                        <option value="11" <?php if($_SESSION["userData"]->getCountyId() == 11){ echo "selected='selected'"; } ?>>Virovitičko-podravska županija</option>
+                        <option value="12" <?php if($_SESSION["userData"]->getCountyId() == 12){ echo "selected='selected'"; } ?>>Požeško-slavonska županija</option>
+                        <option value="13" <?php if($_SESSION["userData"]->getCountyId() == 13){ echo "selected='selected'"; } ?>>Brodsko-posavska županija</option>
+                        <option value="14" <?php if($_SESSION["userData"]->getCountyId() == 14){ echo "selected='selected'"; } ?>>Zadarska županija</option>
+                        <option value="15" <?php if($_SESSION["userData"]->getCountyId() == 15){ echo "selected='selected'"; } ?>>Osječko-baranjska županija</option>
+                        <option value="16" <?php if($_SESSION["userData"]->getCountyId() == 16){ echo "selected='selected'"; } ?>>Šibensko-kninska županija</option>
+                        <option value="17" <?php if($_SESSION["userData"]->getCountyId() == 17){ echo "selected='selected'"; } ?>>Vukovarsko-srijemska županija</option>
+                        <option value="18" <?php if($_SESSION["userData"]->getCountyId() == 18){ echo "selected='selected'"; } ?>>Splitsko-dalmatinska županija</option>
+                        <option value="19" <?php if($_SESSION["userData"]->getCountyId() == 19){ echo "selected='selected'"; } ?>>Istarska županija</option>
+                        <option value="20" <?php if($_SESSION["userData"]->getCountyId() == 20){ echo "selected='selected'"; } ?>>Dubrovačko-neretvanska županija</option>
+                        <option value="21" <?php if($_SESSION["userData"]->getCountyId() == 21){ echo "selected='selected'"; } ?>>Međimurska županija</option>                              
+                    </select>
+                 </li>
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span>Grad:</span>
+                    </p>
+                    <input style="width:400px" maxlength="50" type="text" name="city" value="<?php echo $this->escape($_SESSION["userData"]->getCity()) ?>" />
+                </li>
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span>Poštanski broj:</span>
+                    </p>
+                    <input style="width:400px" maxlength="20" type="text" name="postalCode" value="<?php echo $this->escape($_SESSION["userData"]->getPostalCode()) ?>" />
+                </li>
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span>Ime ulice:</span>
+                    </p>
+                    <input style="width:400px" maxlength="50" type="text" name="streetName" value="<?php echo $this->escape($_SESSION["userData"]->getStreetName()) ?>" />
+                </li>
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span>Kućni broj:</span>
+                    </p>
+                    <input style="width:400px" maxlength="50" type="text" name="streetNumber" value="<?php echo $this->escape($_SESSION["userData"]->getStreetNumber()) ?>" />
+                </li>
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span><font style="color:red">* </font><span>Telefon 1:</span>
+                    </p>
+                    <input style="width:400px" maxlength="50" type="text" name="telephone1" value="<?php echo $this->escape($_SESSION["userData"]->getTelephone1()) ?>" />
+                </li>
+                <li class="newAd">
+                    <p style="margin-bottom:3px">
+                    <span>Telefon 2:</span>
+                    </p>
+                    <input style="width:400px" maxlength="50" type="text" name="telephone2" value="<?php echo $this->escape($_SESSION["userData"]->getTelephone2()) ?>" />
+                </li>
+                <li class="newAd" style="border-bottom:0px">
+                    <p style="margin-bottom:3px">
+                    <span>E - mail:</span>
+                    </p>
+                    <input style="width:400px; background-color:transparent" readonly="readonly" maxlength="20" type="text" value="<?php echo $this->escape($_SESSION["userData"]->getEmail()) ?>" />
+                </li>                     
+            </ul>
+		</fieldset>
+<p>
+    <input style="margin-left:15px" type="submit" value="Unesi izmjene" />
+</p>
+</form>    
+</div>
+</div>

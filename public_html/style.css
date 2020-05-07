@@ -1,0 +1,60 @@
+html, body {margin:0px; padding:0px; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#103c9c; background-color:#f6e6b5}
+
+dt { margin-top:5px; margin-bottom:5px }
+
+.msg{ background-color:white; margin-bottom:5px; border:1px navy solid; padding:2px; line-height:30px}
+legend{ color:#103c9c}
+fieldset{ border:1px #103c9c solid; margin:10px}
+select{ border:1px #103c9c solid; padding:2px}
+li.newAd{ list-style:none; border-bottom:1px #103c9c dotted; padding-bottom:15px}
+.newAd{ border-bottom:1px #103c9c dotted; padding-bottom:15px}
+p.line{ border-bottom:1px #103c9c dotted}
+label.l{ display:inline-block; width:200px; font-weight:bold}
+.imgAdDefaultImage{ width:100px; height:70px}
+.spanAdTitle{ display:inline-block; font-weight:bold; margin-bottom:6px}
+.spanAdDate{ display:inline-block; font-style:italic; margin-bottom:6px}
+.spanAdText{ display:inline-block}
+
+.textContainer{display:inline-block; margin:5px;}
+.textContainer2{display:inline-block; padding:5px; margin:5px; background-color:#FFFF99; border:1px #103c9c solid; width:810px}
+.content2{ min-height:20px; height:100%; width:833px; overflow:auto; border:3px #103c9c solid; background-color:#f8d85f}
+
+ul.categories{list-style-type:none; float:left; margin-top:10px; }
+li.categories{border-bottom:2px #103c9c solid; width:200px; height:18px; padding-top:2px; margin-bottom:7px; background-color:white; text-align:center}
+
+span.title{color:#103c9c; font-weight:bold; margin-bottom:2px}
+.ln{ background-color:transparent; text-align:center; height:40px; line-height:40px}
+a.heavy{ color:#103c9c; font-weight:bold; text-decoration:none; width:200px; display:inline-block}
+a.heavy:hover{ font-weight:bold; background-color:#FF9900; cursor:pointer; width:200px; display:inline-block}
+
+a{ color:#103c9c; text-decoration:none}
+a:hover{ background-color:#FF9900; cursor:pointer}
+
+input.s{ background-color:#f8d85f }
+
+input[type="submit"]{ background-color:#103c9c; border:1px #103c9c solid; cursor:pointer; color:white;}
+input[type="text"], input[type="password"], textarea { font-family:Arial; font-size:12px; border:1px #103c9c solid; background-color:white; color:#103c9c}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus { border:1px #103c9c solid; background-color:#FF9900; color:#103c9c}
+
+.categoriesDiv{ display:inline; float:left}
+
+#header{width:100%; height:70px;; padding:0px; margin:0px; background-image:url(res/header.gif); background-repeat:repeat-x}
+#top{width:900px; height:70px; margin-left:auto; margin-right:auto; }
+#topLeft{ float:left; width:30px; height:70px; background-image:url(res/topLeft.gif); background-repeat:no-repeat}
+#topMiddle{float:left; width:540px; height:70px; background-image:url(res/topMiddle.gif); background-repeat:repeat-x;}
+#menu{margin-top:43px}
+#topRight{ float:left; width:30px; height:70px; background-image:url(res/topRight.gif); background-repeat:no-repeat}
+#logo{ float:left; width:300px; height:70px; background-image:url(res/logo.gif); background-repeat:repeat-x}
+
+#content{height:100%; overflow:auto; width:100%; background-color:white }
+#middle{width:900px; height:100%; overflow:auto; margin-left:auto; margin-right:auto}
+#middleLeft{float:left; width:30px; background-image:url(res/middleLeft.gif); background-repeat:repeat-y }
+#middleMiddle{float:left; width:840px; height:100%; }
+#searchContainer{ text-align:center; margin-top:20px; margin-bottom:20px }
+#middleRight{float:left; width:30px; background-image:url(res/middleRight.gif); background-repeat:repeat-y }
+
+#footer{width:100%; height:70px;; padding:0px; margin:0px; background-image:url(res/footer.gif); background-repeat:repeat-x}
+#bottom{width:900px; height:70px; margin-left:auto; margin-right:auto; }
+#bottomLeft{float:left; width:30px; height:70px; background-image:url(res/bottomLeft.gif); background-repeat:repeat-y }
+#bottomMiddle{float:left; font-size:11px; width:840px; height:40px; line-height:16px; background-image:url(res/bottomMiddle.gif); background-repeat:repeat-x; text-align:center}
+#bottomRight{float:left; width:30px; height:70px; background-image:url(res/bottomRight.gif); background-repeat:repeat-y }
