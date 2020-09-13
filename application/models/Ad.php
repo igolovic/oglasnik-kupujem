@@ -326,7 +326,8 @@ class Default_Model_Ad
 	    from buy_ad_county as ac inner join buy_county as c on c.id = ac.county_id
 	    
 	    where ac.ad_id = " . $this->_id . ";";
-	    
+		
+		$this->_countyArray = array();
 	    $counties = $d->getDb()->fetchAll($sql);
 	    foreach($counties as $county)
 	    {
