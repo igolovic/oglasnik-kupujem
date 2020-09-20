@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Erstellungszeit: 04. Sep 2020 um 23:45
+-- Erstellungszeit: 20. Sep 2020 um 21:19
 -- Server-Version: 8.0.18
 -- PHP-Version: 5.6.40
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `buy_ad` (
   `status` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `buy_ad`
@@ -50,7 +50,8 @@ INSERT INTO `buy_ad` (`id`, `title`, `text`, `user_id`, `start_date`, `duration`
 (2, 'Role - rolke!', 'Kupujem role u dobrom stanju!!!\r\nBroj 47.\r\nDo 400 HRK.', 1, '2020-05-07 13:03:25', 120, 1, 16),
 (4, 'Badminton loptice', 'Kupujem loptice za badminton, nove ili rabljene, dajem 50 kuna.', 1, '2020-05-07 13:06:14', 7, 1, 16),
 (5, 'Udomljavam psa', 'Uzimam psa, bilo koje dobi ili izgleda :)', 1, '2020-05-07 13:08:20', 120, 1, 11),
-(6, 'Tražim stan za najam', 'Tražim namješteni stan do 70 kvadrata u Varaždinu za najam, plaćam do 1500 HRK mjesečno.', 1, '2020-05-07 13:09:50', 120, 1, 24);
+(6, 'Tražim stan za najam', 'Tražim namješteni stan do 70 kvadrata u Varaždinu za najam, plaćam do 1500 HRK mjesečno.', 1, '2020-05-07 13:09:50', 120, 1, 24),
+(7, 'Auto', 'Trebam auto, rabljeni, do 50000 km.', 1, '2020-09-20 21:47:53', 120, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -65,19 +66,74 @@ CREATE TABLE IF NOT EXISTS `buy_ad_county` (
   `county_id` int(11) NOT NULL,
   `name` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `buy_ad_county`
 --
 
 INSERT INTO `buy_ad_county` (`id`, `ad_id`, `county_id`, `name`) VALUES
-(6, 2, 6, ''),
-(5, 2, 2, ''),
-(4, 2, 1, ''),
-(8, 4, 6, ''),
-(9, 5, -1, ''),
-(10, 6, 6, '');
+(150, 7, 21, ''),
+(149, 7, 20, ''),
+(106, 2, 4, ''),
+(11, 3, 1, ''),
+(148, 7, 19, ''),
+(72, 5, 1, ''),
+(147, 7, 18, ''),
+(12, 3, 3, ''),
+(146, 7, 17, ''),
+(16, 4, -1, ''),
+(145, 7, 16, ''),
+(108, 2, 19, ''),
+(107, 2, 5, ''),
+(105, 6, 20, ''),
+(104, 6, 18, ''),
+(103, 6, 16, ''),
+(102, 6, 15, ''),
+(101, 6, 11, ''),
+(100, 6, 10, ''),
+(99, 6, 9, ''),
+(98, 6, 8, ''),
+(97, 6, 7, ''),
+(96, 6, 6, ''),
+(95, 6, 5, ''),
+(94, 6, 4, ''),
+(93, 6, 3, ''),
+(73, 5, 2, ''),
+(74, 5, 3, ''),
+(75, 5, 4, ''),
+(76, 5, 5, ''),
+(77, 5, 6, ''),
+(78, 5, 7, ''),
+(79, 5, 8, ''),
+(80, 5, 9, ''),
+(81, 5, 10, ''),
+(82, 5, 11, ''),
+(83, 5, 12, ''),
+(84, 5, 13, ''),
+(85, 5, 14, ''),
+(86, 5, 15, ''),
+(87, 5, 16, ''),
+(88, 5, 17, ''),
+(89, 5, 18, ''),
+(90, 5, 19, ''),
+(91, 5, 20, ''),
+(92, 5, 21, ''),
+(144, 7, 15, ''),
+(143, 7, 14, ''),
+(142, 7, 13, ''),
+(141, 7, 12, ''),
+(140, 7, 11, ''),
+(139, 7, 10, ''),
+(138, 7, 9, ''),
+(137, 7, 8, ''),
+(136, 7, 7, ''),
+(135, 7, 6, ''),
+(134, 7, 5, ''),
+(133, 7, 4, ''),
+(132, 7, 3, ''),
+(131, 7, 2, ''),
+(130, 7, 1, '');
 
 -- --------------------------------------------------------
 
@@ -136,27 +192,27 @@ CREATE TABLE IF NOT EXISTS `buy_county` (
 --
 
 INSERT INTO `buy_county` (`id`, `name`) VALUES
-(1, 'Zagrebačka'),
-(2, 'Krapinsko-zagorska'),
-(3, 'Sisačko-moslavačka'),
-(4, 'Karlovačka'),
-(5, 'Varaždinska'),
-(6, 'Koprivničko-križevačka'),
-(7, 'Bjelovarsko-bilogorska'),
-(8, 'Primorsko-goranska'),
-(9, 'Ličko-senjska'),
-(10, 'Virovitičko-podravska'),
-(11, 'Požeško-slavonska'),
-(12, 'Brodsko-posavska'),
-(13, 'Zadarska'),
-(14, 'Osječko-baranjska'),
-(15, 'Šibensko-kninska'),
-(16, 'Vukovarsko-srijemska'),
-(17, 'Splitsko-dalmatinska'),
-(18, 'Istarska'),
-(19, 'Dubrovačko-neretvanska'),
-(20, 'Međimurska'),
-(21, 'Grad Zagreb');
+(1, 'Grad Zagreb'),
+(2, 'Zagrebačka županija'),
+(3, 'Krapinsko-zagorska županija'),
+(4, 'Sisačko-moslavačka županija'),
+(5, 'Karlovačka županija'),
+(6, 'Varaždinska županija'),
+(7, 'Koprivničko-križevačka županija'),
+(8, 'Bjelovarsko-bilogorska županija'),
+(9, 'Primorsko-goranska županija'),
+(10, 'Ličko-senjska županija'),
+(11, 'Virovitičko-podravska županija'),
+(12, 'Požeško-slavonska županija'),
+(13, 'Brodsko-posavska županija'),
+(14, 'Zadarska županija'),
+(15, 'Osječko-baranjska županija'),
+(16, 'Šibensko-kninska županija'),
+(17, 'Vukovarsko-srijemska županija'),
+(18, 'Splitsko-dalmatinska županija'),
+(19, 'Istarska županija'),
+(20, 'Dubrovačko-neretvanska županija'),
+(21, 'Međimurska županija');
 
 -- --------------------------------------------------------
 
@@ -189,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `buy_user` (
 --
 
 INSERT INTO `buy_user` (`id`, `username`, `password`, `name`, `last_name`, `county_id`, `city`, `postal_code`, `street_name`, `street_number`, `telephone1`, `telephone2`, `unique_id`, `confirmed`, `email`) VALUES
-(1, 'ivan', 'test', 'Ivan', 'Golović', 6, 'Varaždin', 42000, 'Ulica Zelena', '1 A', '5663567', '444444444', '5eb3ddb457fb44.17206845', 1, 'test@test.com');
+(1, 'ivan', 'test', 'Ivan', 'Golović', 6, 'Varaždin', 42000, 'Ulica Zelena', '1 A', '5663567', '444444444', '5eb3ddb457fb44.17206845', 1, 'igolovic@gmail.com');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
