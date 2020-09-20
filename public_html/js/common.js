@@ -1,14 +1,9 @@
-function uncheckCounties()
+function checkAllCounties()
 {
-	for(var i=1; i<=21; i++)
+	for(var i = 1; i <= 21; i++)
 	{
-		document.getElementById('ch' + i).checked = false;
+		document.getElementById('ch' + i).checked = true;
 	}
-}
-
-function uncheckAllCountriesOption()
-{
-	document.getElementById('chAll').checked = false;
 }
 
 function addFavorite()

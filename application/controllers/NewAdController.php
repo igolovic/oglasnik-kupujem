@@ -110,5 +110,8 @@ class NewAdController extends Zend_Controller_Action
 						
 			$this->view->adInserted = true;
 		}
+
+		$county = new Default_Model_County();
+		$this->view->counties = $county->getCounties();
     }
 }

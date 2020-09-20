@@ -112,6 +112,9 @@ class EditAdController extends Zend_Controller_Action
 			}
 			
 			$this->view->ad = $ad;
-    	}
+		}
+		
+		$county = new Default_Model_County();
+		$this->view->counties = $county->getCounties();
 	}
 }

@@ -32,7 +32,7 @@ a:hover{ background-color:#FF9900; cursor:pointer}
 
 input.s{ background-color:#f8d85f }
 
-input[type="submit"]{ background-color:#103c9c; border:1px #103c9c solid; cursor:pointer; color:white;}
+input[type="submit"], input[type="button"]{ background-color:#103c9c; border:1px #103c9c solid; cursor:pointer; color:white;}
 input[type="text"], input[type="password"], textarea { font-family:Arial; font-size:12px; border:1px #103c9c solid; background-color:white; color:#103c9c}
 input[type="text"]:focus, input[type="password"]:focus, textarea:focus { border:1px #103c9c solid; background-color:#FF9900; color:#103c9c}
 
